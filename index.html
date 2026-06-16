@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loan EMI Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="receipt">
+
+    <!-- Top of the "paper receipt" -->
+    <div class="perforation"></div>
+
+    <header class="receipt-header">
+      <p class="eyebrow">Before you sign anything</p>
+      <h1>Loan EMI Calculator</h1>
+      <p class="subtitle">Punch in your numbers, get your real monthly payment.</p>
+    </header>
+
+    <!-- The input form -->
+    <section class="form-section">
+      <label for="loanAmount">
+        Loan amount (₹)
+        <input type="number" id="loanAmount" placeholder="e.g. 500000" min="1" />
+      </label>
+
+      <label for="interestRate">
+        Interest rate (% per year)
+        <input type="number" id="interestRate" placeholder="e.g. 9.5" min="0" step="0.01" />
+      </label>
+
+      <label for="tenureMonths">
+        Loan tenure (in months)
+        <input type="number" id="tenureMonths" placeholder="e.g. 36" min="1" />
+      </label>
+
+      <button id="calculateBtn">Calculate EMI</button>
+      <p id="errorMsg" class="error-msg"></p>
+    </section>
+
+    <!-- The result, hidden until the user calculates -->
+    <section id="resultSection" class="result-section hidden">
+      <div class="emi-amount">
+        <span class="label">Your Monthly EMI</span>
+        <span class="value" id="emiValue">₹0</span>
+      </div>
+
+      <div class="split-bar" id="splitBar">
+        <div class="split-principal" id="splitPrincipal"></div>
+        <div class="split-interest" id="splitInterest"></div>
+      </div>
+
+      <div class="split-legend">
+        <span><i class="dot dot-principal"></i> Principal: <b id="principalLabel">₹0</b></span>
+        <span><i class="dot dot-interest"></i> Interest: <b id="interestLabel">₹0</b></span>
+      </div>
+
+      <div class="totals">
+        <div>
+          <span class="label">Total Interest Payable</span>
+          <span class="value" id="totalInterest">₹0</span>
+        </div>
+        <div>
+          <span class="label">Total Amount Payable</span>
+          <span class="value" id="totalPayment">₹0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Required: your name + email, visible on the page -->
+    <footer class="receipt-footer">
+      <p class="maker-info">
+        Built by <strong>MASIRAH SAUDAGAR</strong><br />
+        Contact: <strong>masirahhh61@gmail.com</strong>
+      </p>
+      <a class="dh-button" href="https://digitalheroesco.com" target="_blank" rel="noopener noreferrer">
+        Built for Digital Heroes
+      </a>
+    </footer>
+
+    <!-- Bottom of the "paper receipt" -->
+    <div class="perforation"></div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
